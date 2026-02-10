@@ -87,3 +87,22 @@ if (fullPricedBook) {
     })
 
 }
+
+
+
+
+// ✔️ - Snack 3 - Ordinare gli Autori
+
+// ✔️ - Creare un array(authors) che contiene gli autori dei libri.
+const authors = books.map((book) => book.author)
+console.log("Autori", authors)
+
+// ✔️ - Crea una variabile booleana(areAuthorsAdults) per verificare se gli autori sono tutti maggiorenni.
+const areAuthorsAdults = authors.every((author) => author.age >= 18)
+console.log("tuttti gli autori sono maggiorenni?", areAuthorsAdults)
+
+// ✔️ - Ordina l’array authors in base all’età, senza creare un nuovo array. (se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente)
+authors.sort((a1, a2) => {
+    return areAuthorsAdults ? a1.age - a2.age : a2.age - a1.age
+})
+console.log("Autori in ordine di età", authors)
